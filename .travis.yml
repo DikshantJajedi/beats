@@ -31,9 +31,15 @@ jobs:
   include:
     # General checks
     - os: linux
+      arch: amd64
       env: TARGETS="check"
       go: $TRAVIS_GO_VERSION
       stage: check
+    - os: linux
+      arch: arm64
+      env: TARGETS="check"
+      go: $TRAVIS_GO_VERSION
+      stage: check  
 
     # Filebeat
     - os: linux
